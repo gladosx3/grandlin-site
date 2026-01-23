@@ -63,7 +63,7 @@ function App() {
           }
           
           const size = ((Math.sin(seed * 23.456) * 43758.5453) % 1) * 25 + 5; // 5-30px
-          const duration = ((Math.sin(seed * 56.789) * 43758.5453) % 1) * 40 + 40; // 40-80s
+          const duration = 60; // Durée fixe pour toutes les bulles
           const delay = ((Math.sin(seed * 34.012) * 43758.5453) % 1) * 5; // 0-5s
           const left = ((Math.sin(seed * 67.345) * 43758.5453) % 1) * 100; // 0-100%
           
