@@ -58,7 +58,7 @@ export default function MagikarpSpawner() {
           return initialTop;
         })(),
         direction: Math.random() > 0.5 ? 'left' : 'right',
-        duration: 8 + Math.random() * 6,
+        duration: 15 + Math.random() * 10, // 15-25 secondes (augmenté pour traverser complètement)
         isShiny: Math.random() > 0.95,
         scale: 1 + Math.random(),
       };
@@ -92,8 +92,8 @@ export default function MagikarpSpawner() {
       style={{ 
         overflow: 'visible', 
         overflowX: 'hidden', 
-        top: '-200px',
-        minHeight: 'calc(100% + 400px)',
+        top: '-400px',
+        minHeight: 'calc(100% + 600px)',
         left: '-100px',
         right: '-100px',
         width: 'calc(100% + 200px)',
