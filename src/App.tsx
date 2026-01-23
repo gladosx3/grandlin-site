@@ -48,7 +48,7 @@ function App() {
     >
       {/* Bulles flottantes partout */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        {[...Array(60)].map((_, i) => {
+        {[...Array(64)].map((_, i) => {
           // Distribution: 40% en haut (0-40%), 30% au milieu (40-70%), 30% plus bas (70-100%)
           const seed = i;
           const rand = (Math.sin(seed * 12.9898) * 43758.5453) % 1;
@@ -63,7 +63,7 @@ function App() {
           }
           
           const size = ((Math.sin(seed * 23.456) * 43758.5453) % 1) * 25 + 5; // 5-30px
-          const duration = 60; // Durée fixe pour toutes les bulles
+          const duration = 40; // Durée fixe plus rapide
           const delay = ((Math.sin(seed * 34.012) * 43758.5453) % 1) * 5; // 0-5s
           const left = ((Math.sin(seed * 67.345) * 43758.5453) % 1) * 100; // 0-100%
           
