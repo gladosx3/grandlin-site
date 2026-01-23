@@ -32,6 +32,15 @@ export default function MagikarpSpawner() {
 
   useEffect(() => {
     const spawnMagikarp = () => {
+      // Vérifier si on a déjà trop de Magikarp à l'écran
+      if (magikarpList.length >= 10) {
+        // Attendre avant de réessayer
+        const nextSpawnDelay = 1000 + Math.random() * 666;
+        if (intervalRef.current) clearTimeout(intervalRef.current);
+        intervalRef.current = setTimeout(spawnMagikarp, nextSpawnDelay) as any;
+        return;
+      }
+
       // Vérifier si on doit spawner basé sur le spawn rate
       if (Math.random() > spawnRate) {
         // Relancer immédiatement un nouvel essai
