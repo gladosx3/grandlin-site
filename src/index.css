@@ -37,13 +37,13 @@
       transform: translateX(100vw) translateY(0);
     }
     100% {
-      transform: translateX(-200px) translateY(0);
+      transform: translateX(-500px) translateY(0);
     }
   }
 
   @keyframes moveLeftToRight {
     0% {
-      transform: translateX(-200px) translateY(0);
+      transform: translateX(-500px) translateY(0);
     }
     100% {
       transform: translateX(100vw) translateY(0);

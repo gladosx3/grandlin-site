@@ -96,10 +96,10 @@ export default function MagikarpSpawner() {
         overflow: 'visible', 
         overflowX: 'hidden', 
         top: '-400px',
-        minHeight: 'calc(100% + 600px)',
-        left: '-100px',
-        right: '-100px',
-        width: 'calc(100% + 200px)',
+        minHeight: 'calc(100% + 800px)',
+        left: '-200px',
+        right: '-200px',
+        width: 'calc(100% + 400px)',
       }}
     >
       {magikarpList.map((magikarp) => {
