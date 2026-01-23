@@ -77,7 +77,7 @@ export default function MagikarpSpawner() {
           top: initialTop,
           direction: Math.random() > 0.5 ? 'left' : 'right',
           duration: 25, // Durée fixe longue pour traverser l'écran complètement
-          isShiny: true, // 100% shiny
+          isShiny: Math.random() > 0.95, // 5% de chance d'être shiny
           scale: scale,
         };
 
