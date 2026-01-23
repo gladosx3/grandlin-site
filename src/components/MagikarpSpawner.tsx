@@ -73,11 +73,11 @@ export default function MagikarpSpawner() {
         const initialTop = minTopRequired + Math.random() * (maxTopRequired - minTopRequired);
 
         const newMagikarp: Magikarp = {
-          id: Date.now() + Math.random().toString(),
+          id: Math.random().toString(36) + Date.now().toString(36),
           top: initialTop,
           direction: Math.random() > 0.5 ? 'left' : 'right',
           duration: 25, // Durée fixe longue pour traverser l'écran complètement
-          isShiny: Math.random() > 0.95, // 5% de chance d'être shiny
+          isShiny: Math.random() < 0.05, // 5% de chance d'être shiny
           scale: scale,
         };
 
