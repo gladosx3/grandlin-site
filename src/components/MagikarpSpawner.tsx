@@ -12,11 +12,10 @@ interface Magikarp {
 export default function MagikarpSpawner() {
   const [magikarpList, setMagikarpList] = useState<Magikarp[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
-  const intervalRef = useRef<NodeJS.Timeout>();
 
   useEffect(() => {
     // Check toutes les secondes si on peut spawner
-    const spawnChecker = () => {
+    const spawnChecker = setInterval(() => {
       setMagikarpList((currentList) => {
         // Si moins de 10 Magikarp, en spawn une nouvelle
         if (currentList.length < 10) {
@@ -44,18 +43,10 @@ export default function MagikarpSpawner() {
 
         return currentList;
       });
-
-      // Relancer le check après 1 seconde
-      if (intervalRef.current) clearTimeout(intervalRef.current);
-      intervalRef.current = setTimeout(spawnChecker, 1000) as any;
-    };
-
-    // Commencer le premier check
-    if (intervalRef.current) clearTimeout(intervalRef.current);
-    intervalRef.current = setTimeout(spawnChecker, 1000) as any;
+    }, 1000);
 
     return () => {
-      if (intervalRef.current) clearTimeout(intervalRef.current);
+      clearInterval(spawnChecker);
     };
   }, []);
 
